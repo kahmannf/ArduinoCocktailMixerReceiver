@@ -24,7 +24,7 @@ void setup()
 	
 	PORTD = 0b11111100;
 
-	PORTB = 0b00011111;
+	PORTB = 0b00111111;
 	
 	Serial.begin(9600);
 
@@ -51,26 +51,26 @@ void toggle_pin(int slot, int state)
 		B4: 10
 	 */
 
-	 if(slot < 6) //D-Register
+	 if(slot < 6) //B-Register
 	 {
 		if(state == 0)
 		{
-			PORTD |= (1<<(slot + 2));
+			PORTB |= (1<<(slot));
 		}
 		else
 		{
-			PORTD &= ~(1<<(slot + 2));
+			PORTB &= ~(1<<(slot));
 		}
 	 }
-	 else if(slot > 5)
+	 else if(slot > 9)
 	 {
 		if(state == 0)
 		{
-			PORTB |= (1<<(slot - 6));
+			PORTD |= (1<<(slot - 8));
 		}
 		else
 		{
-			PORTB &= ~(1<<(slot - 6));
+			PORTD &= ~(1<<(slot - 8));
 		}
 	 }
 }

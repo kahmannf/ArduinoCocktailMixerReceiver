@@ -37,18 +37,21 @@ void toggle_pin(int slot, int state)
 	/* pins are match like this: 
 		D0: blocked for serial data (receive);
 		D1: blocked for serial data (transmit);
-		D2: 0
-		D3: 1
-		D4: 2
-		D5: 3
-		D6: 4
-		D7: 5
+		
+		B0: 0
+		B1: 1
+		B2: 2
+		B3: 3
+		B4: 4
+		B5: 5 
+		 
+		D2: 10
+		D3: 11
+		D4: 12
+		D5: 13
+		D6: 14
+		D7: 15
 
-		B0: 6
-		B1: 7
-		B2: 8
-		B3: 9
-		B4: 10
 	 */
 
 	 if(slot < 6) //B-Register
